@@ -1,0 +1,1 @@
+CI=true bun run lint
