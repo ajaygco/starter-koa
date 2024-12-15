@@ -5,20 +5,22 @@
   "main": "source/app.mjs",
   "type": "module",
   "scripts": {
-    "serve": "node source/app.mjs",
-    "start": "nodemon source/app.mjs",
+    "serve": "env-cmd -f .env node source/app.mjs",
+    "start": "env-cmd -f .env nodemon source/app.mjs",
     "lint": "eslint . --ext js,mjs",
     "prepare": "husky"
   },
   "dependencies": {
     "@koa/cors": "^5.0.0",
     "@koa/router": "^13.1.0",
+    "@supabase/supabase-js": "^2.47.7",
     "chalk": "^5.3.0",
     "koa": "^2.15.3",
     "koa-body-parser": "^1.1.2",
     "koa-cors": "^0.0.16"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",

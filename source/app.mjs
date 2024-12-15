@@ -3,11 +3,20 @@ import Koa from "koa";
 import KoaCors from "@koa/cors";
 import KoaBodyParser from "koa-body-parser";
 
+// Common
+import { supabaseConfig } from "./common/configs.common.mjs";
+
+// Helpers
+import { initialiseSupabase } from "./helpers/supabase.helper.mjs";
+
 // Middlewares
 import { logger } from "./middlewares/logger.mjs";
 
 // Router
 import { appRouter } from "./app-router.mjs";
+
+// Initialise Supabase
+initialiseSupabase(supabaseConfig);
 
 // Instance
 const app = new Koa();
